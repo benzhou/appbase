@@ -1,0 +1,35 @@
+<ion-content>
+	<form name="signUpForm" [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.value)" >
+		<ion-list>
+			<ion-item [class.error]="!signUpForm.controls.email.valid && signUpForm.controls.email.touched">
+				<ion-label floating>Email</ion-label>
+				<ion-input formControlName="email" type="text"></ion-input>
+			</ion-item>
+
+			<ion-item [class.error]="!signUpForm.controls.password.valid && signUpForm.controls.password.touched">
+				<ion-label floating>Password</ion-label>
+				<ion-input formControlName="password" type="password"></ion-input>
+			</ion-item>
+
+			<ion-item [class.error]="!signUpForm.controls.confirmPassword.valid && signUpForm.controls.confirmPassword.touched">
+				<ion-label floating>Confirm Password</ion-label>
+				<ion-input formControlName="confirmPassword" type="password"></ion-input>
+			</ion-item>
+
+			<ion-item [class.error]="!signUpForm.controls.firstname.valid && signUpForm.controls.firstname.touched">
+				<ion-label floating>First Name</ion-label>
+				<ion-input formControlName="firstname" type="text"></ion-input>
+			</ion-item>
+
+			<ion-item [class.error]="!signUpForm.controls.lastname.valid && signUpForm.controls.lastname.touched">
+				<ion-label floating>Last Name</ion-label>
+				<ion-input formControlName="lastname" type="text"></ion-input>
+			</ion-item>
+
+			<div padding text-center>
+				<button type="submit" [disabled]="!signUpForm.valid" ion-button>Sign up</button>
+				<a class="text-center" (click)="cancel($event)" clear>Cancel</a>
+			</div>
+		</ion-list>
+	</form>
+</ion-content>
