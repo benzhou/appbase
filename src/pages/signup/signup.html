@@ -6,25 +6,45 @@
 				<ion-input formControlName="email" type="text"></ion-input>
 			</ion-item>
 
+			<ion-item *ngIf="!signUpForm.controls.email.valid  && signUpForm.controls.email.touched">
+                <p>Please enter a valid email.</p>
+            </ion-item>
+
 			<ion-item [class.error]="!signUpForm.controls.password.valid && signUpForm.controls.password.touched">
 				<ion-label floating>Password</ion-label>
 				<ion-input formControlName="password" type="password"></ion-input>
 			</ion-item>
 
+			<ion-item *ngIf="!signUpForm.controls.password.valid  && signUpForm.controls.password.touched">
+                <p>Password is required, and must be 3 characters long.</p>
+            </ion-item>
+
 			<ion-item [class.error]="!signUpForm.controls.confirmPassword.valid && signUpForm.controls.confirmPassword.touched">
 				<ion-label floating>Confirm Password</ion-label>
-				<ion-input formControlName="confirmPassword" type="password"></ion-input>
+				<ion-input formControlName="confirmPassword" type="password" validateEqual="password"></ion-input>
 			</ion-item>
+
+			<ion-item *ngIf="!signUpForm.controls.confirmPassword.valid  && signUpForm.controls.confirmPassword.touched">
+                <p>Not much password.</p>
+            </ion-item>
 
 			<ion-item [class.error]="!signUpForm.controls.firstname.valid && signUpForm.controls.firstname.touched">
 				<ion-label floating>First Name</ion-label>
 				<ion-input formControlName="firstname" type="text"></ion-input>
 			</ion-item>
 
+			<ion-item *ngIf="!signUpForm.controls.firstname.valid  && signUpForm.controls.firstname.touched">
+                <p>First Name is required</p>
+            </ion-item>
+
 			<ion-item [class.error]="!signUpForm.controls.lastname.valid && signUpForm.controls.lastname.touched">
 				<ion-label floating>Last Name</ion-label>
 				<ion-input formControlName="lastname" type="text"></ion-input>
 			</ion-item>
+
+			<ion-item *ngIf="!signUpForm.controls.lastname.valid  && signUpForm.controls.lastname.touched">
+                <p>Last Name is required</p>
+            </ion-item>
 
 			<div padding text-center>
 				<button type="submit" [disabled]="!signUpForm.valid" ion-button>Sign up</button>

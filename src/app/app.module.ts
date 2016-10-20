@@ -15,6 +15,8 @@ import {usersService} from '../services/users.service';
 import {SessionService} from '../services/session.service';
 
 
+import { EqualValidator } from '../directives/equalValidator';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +25,8 @@ import {SessionService} from '../services/session.service';
     HomePage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    EqualValidator
   ],
   imports: [
     IonicModule.forRoot(MyApp),

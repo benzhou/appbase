@@ -31,6 +31,10 @@ export class SignupPage extends PageBase{
 
         this.signUpForm = formBuilder.group({  
             'email': ['', Validators.compose([Validators.required, ValidationService.emailValidator])],
+            /*'passwords': formBuilder.group({
+                password: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+                confirmPassword: ['', Validators.required]
+            }, {validator: this.areEqual}),*/
             'password': ['', Validators.compose([Validators.required, Validators.minLength(3)])],
             'confirmPassword': ['', Validators.compose([Validators.required, Validators.minLength(3)])],
             'firstname': ['', Validators.compose([])], 

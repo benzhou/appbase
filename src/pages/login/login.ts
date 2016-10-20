@@ -52,12 +52,12 @@ export class LoginPage extends PageBase {
         signUpModal.present();
     }
 
-    login(value:any/*username, password*/) {
+    login(loginForm:any/*username, password*/) {
         let loader = super.presentLoading();
         this.logger.log.debug('login fuc called. ');
-        this.logger.log.debug('Submitted value: ', value);
+        this.logger.log.debug('Submitted value: ', loginForm);
 
-        this.user.login(value.username, value.password).finally(() => { 
+        this.user.login(loginForm.username, loginForm.password).finally(() => { 
             this.logger.log.debug("finally called. ");
              
             loader.dismiss();
